@@ -1,0 +1,8 @@
+in:
+Todays seesion learn about EC2 instance creation 
+learned about SSH , Jump server , inbound rule , port .
+Also learned few basic command of Linux - mkdir , cd , ls , ls _la
+
+2 hours spent on Linux 
+1 hour for coding practice
+2 hours for watching previous video
