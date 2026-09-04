@@ -1,0 +1,26 @@
+>Creation of EC2 with terraform
+> top command
+Is used to monitor system performance & running process in real time, CPU usage, load avg load avg define in 3 section 1515 min
+CPU usage by process/application/program uses total, free, used, cache
+Memory usage
+> sed command
+is used to search, replace, insert, delete, and modify text in files or command output without opening the file in an editor. Mostly used to change old value to new value in file
+> awk
+used to search, filter, extract columns/rows, perform calculations, and generate reports from files or command output.
+>Umask
+Used to set default file permission to read, write for owner & read only for group & other, used to fetch permission
+applied at time of File or Directory creation
+default value 022, file 666, directory 777
+>find
+used to search for files & directories, Specially used for large file. which enable us to provide information of storage consumption by file & D
+>Absolute path Full path to For D, give path from root, access from anywhere.
+>Relative Start from current working D, Not access from anywhere.
+aux
+kill
+-9 kill PID
+pkill
+pgrep
+I
+IDP provider(Okta) An Identity Provider (IdP) is a system that authenticates users and verifies their identity before allowing access to applications,
+websites, or cloud services. A Password Manager is a tool that securely stores, generates, and manages your passwords in an encrypted vault.
+ 
