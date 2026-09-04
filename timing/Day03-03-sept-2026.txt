@@ -1,0 +1,8 @@
+Details information about ls -l listing command 
+chmod - file permissions given to a specific user, owner or group rwx - 421 
+Chown to changed the ownership 
+Chgrp changed the group name 
+Sudo used for changing the user permission to root user 
+Sorting with listing  ls -latSh
+Hard link & Soft link concept 
+Command - Top head vim vi nano
