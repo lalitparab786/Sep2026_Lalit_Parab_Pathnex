@@ -1,0 +1,12 @@
+5-sep-26
+ 
+Password less SSH login
+ 
+> when we create EC2 (through ssl public key & private key is generated) > then have to provide public key to Jump server/ EC2 server > in case of jump server, they share this public key to rest of all server present in jump server > Authentication done based on your private key stored on local with public key on server > Then at time of login when we do SSH no need to give token/password because it is already authenticated.
+ 
+> Passwordless SSH login uses a public-private key pair for authentication. The public key is stored on the target server in ~/.ssh/authorized_keys, while the user keeps the private key. During SSH connection, the server verifies that the client possesses the matching private key, allowing secure login without entering a password. In enterprise environments, users often first connect to a Jump/Bastion server and then access private EC2 instances within the VPC.
+ 
+Vertical Scaling means increasing the CPU, RAM, or storage of an existing EC2 instance. For example, upgrading from t3.medium to t3.large.
+Horizontal Scaling means adding multiple EC2 instances (Add more servers instead of increasing the size of one server.) behind a Load Balancer Load balancer - A Load Balancer is a service that distributes incoming user requests across multiple servers (EC2 instances) so that no single server becomes overloaded.
+ 
+Echo To print
