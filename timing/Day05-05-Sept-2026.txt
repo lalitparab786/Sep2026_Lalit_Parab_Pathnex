@@ -1,0 +1,17 @@
+untrack - Tracking - Staging - commit- Push
+ 
+> Untrack & Track - git diff
+> git restore
+> git stash, git stash list , git stash pop id ( to save file temporary)
+> git reset --hard HEAD~1 , git reset --soft HEAD~1 (we are do commit , dont want to push)
+ 
+ 
+> git push
+> authentication username & password
+> PR raised once approved
+> git Merge
+>git conflict
+ 
+If do git add
+ 
+> if i do git add & wanted to do changes in same file , then do the changes , then do git status 2 entries are shown for same file that is file 1 is in staging & file 2 not satging , then if i wanted to newly changed file then do git add & then git commit. no need to do git add again for existing file.

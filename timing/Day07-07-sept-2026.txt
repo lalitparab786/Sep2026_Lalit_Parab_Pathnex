@@ -1,0 +1,53 @@
+7-sep-26
+ 
+cloud Cloud computing means using computing resources such as servers, storage, databases, networking, and software over the Internet, instead of buying and maintaining your own physical servers On Premise
+ 
+Authentication Who you are
+ 
+Authorization What kind of permission u have
+ 
+I
+ 
+Lending zone
+ 
+AWS control tower
+ 
+> Creation of EC2
+ 
+select service we want (AWS windows) @ AMI (Amazon Machine Image) It contains everything required to start a server, such as the operating system, software, configuration settings, and storage mappings @ download the key @ hardware & network config
+ 
+Pricing model On demand, Reserved, spot instance (IMP)
+ 
+Auto scaling feature Manage EC2 based on traffic
+ 
+Integrate with VPC, S3, Iam for better security & networking
+ 
+> IAM (Identity & access management)
+ 
+MFA (Multi factor authentication) For security
+ 
+policies An IAM Policy is a JSON document that defines what actions are allowed or denied on AWS resources for a user, group, or role. (IMP)
+ 
+Effect Allow or Deny
+ 
+Action What operation can be performed, denotes all Resource On which AWS resource you want to perform an action.
+ 
+arn: aws : ec2:ap-south-1:123456789012: instance/i-123
+ 
+1 1 partition Service Region Account ID Resource
+ 
+> VPC (imp)
+ 
+Internet gateway Connects VPC directly to the Internet, Inbound + Outbound
+ 
+Nat gateway Convert private ip to public & Provides Internet access, Outbound Only
+ 
+Private subnet Route to Nat gateway via routing table, One way traffic, stored data base Public subnet Route to internet gateway via routing table, both way traffic, stored server
+ 
+> S3 storage service Used as storage
+ 
+53 storage classes in table (imp)
+ 
+Ln 62, Col 145 5,476 characters
+ 
+Plain
