@@ -1,0 +1,53 @@
+8-Sep-26
+
+> Session manager
+
+allows you to securely connect to EC2 instances without using SSH, Password less authentication.
+
+Track & share all the activities for user
+
+No need to manage pem keys, No need for a Jump/Bastion Server
+
+Make sure user should have this feature in IAM policy
+
+logs can be stored in CloudWatch or S3 for auditing.
+
+> Route 53
+
+Route 53 is AWS's Domain Name System (DNS) service. It translates a domain name (like www.amazon.com) into an IP address that computers use to communicate.
+
+When a user enters: www.lalit.com then Route 53 converts it to:44.212.10.20 and sends the user to the correct server.
+
+1. Domain Registration You can purchase and manage domain names such as: lalit.com
+
+2. DNS Routing route the traffic
+
+3. Health Checks Route 53 can continuously monitor an application and automatically redirect traffic if a server becomes unhealthy
+
+it uses load balancer which distribute the traffic across all the server equally
+
+IMP Routing Policies, DNS records type
+
+CloudTrail "Who changed my system?", focuses on events
+
+CloudWatch "How is my system performing?", focus on matrix events
+
+ANS CloudTrail
+
+-is a monitoring and auditing service that records API calls and user activities in an AWS account, helping organizations with security, compliance, Easy It records and monitors API calls and user activities in your AWS account. It helps you track who did what, when, and from where in your AWS
+
+Tivities governance, and troubleshooting
+
+environment. By default, CloudTrail provides 90 days of Event History. For long-term storage, logs can be sent to an S3 bucket.
+
+Further connects to cloud watch for monitoring
+
+Amazon CloudWatch
+
+is an Als monitoring service that collects and tracks metrics, logs, and events from AWS resources and applications. Eg-
+
+Suppose you have an EC2 instance running a website. So it monitor CPU Utilization, Network Traffic, Application Logs, RAM storage If CPU usage
+
+reaches 90%, CloudWatch can automatically send an alert or trigger an action. Metric numerical data points about resource performance. CPU Utilization = 85%
+
+Logs contain detailed information about what happened in the system. why CPU increase/Which application caused high CPU: total 500 requests, CPU
