@@ -1,0 +1,90 @@
+[7:50 pm, 09/09/2026] 😇 Lallit Mohan: 9-Sep-2026
+
+WAF Blocks bad web requests.
+
+GuardDuty Detects attackers inside AWS.
+
+CloudWatch Monitors performance.
+
+CloudTrail Records AWS API activity & user activity.
+
+Security Hub Central security dashboard
+
+> AWS WAF
+
+H1
+
+counting, or challenging them based on defined rules (Customizable rule). Below are the common web attack SQL Injection (SQLi) Access, modify, or delete database data. If the application doesn't validate input properly, the attacker may bypass login or access database records. AWS WAF can detect common SQL injection patterns and block them
+
+- Brute Force Attack Guess usernames and passwords. Thousands of login attempts are sent automatically until the correct password is found. AWS WAF rate-based rules can limit such requests.
+
+Bot Attacks Automated scraping, fake account creation, ticket grabbing
+
+Cross-Site Scripting Inject malicious JavaScript into web pages.
+
+Customizable rule to track/filter malicious web traffic
+
+> Amazon guard duty
+
+Is AWS's threat detection service that continuously analyzes CloudTrail, VPC Flow Logs, DNS logs, and other AWS data sources to detect compromised accounts, malware, crypto mining, suspicious API activity.
+
+- so guard duty basically Detect threat in AWS using logs (logs VPC, DNS, EKS, S3, cloud trail), GuardDuty itself does not block attacks. flow logs > Amazon GuardDuty > Analyzes logs using: Machine L/Threat Intelligence > Security finding > Security Team receives alert/Event bridge.
+
+Detect threat for AWS environments
+
+Uses Machine Learning to detect threats based on Past reference data.
+
+I
+
+VER
+
+> Amazon Inspector
+
+Amazon Inspector continuously scans AWS workloads and applications (EC2, Container Images, Lambda Functions) for security vulnerabilities and provides findings with remediation recommendations
+
+AWS WAF
+
+Protect web applications
+
+HTTP/HTTPS requests
+
+Allow, Block, CAPTCHA, Rate Limit Generates Security Findings
+
+Amazon GuardDuty
+
+Detect security threats
+
+AWS logs, network activity suspicious behavior
+
+Generates Vulnerability Findings & remediation advice
+[7:50 pm, 09/09/2026] 😇 Lallit Mohan: flow logs > Amazon GuardDuty > Analyzes logs using: Machine L/Threat Intelligence > Security finding > Security Team receives alert/Event bridge. Detect threat for AWS environments
+
+Uses Machine Learning to detect threats based on Past reference data.
+
+> Amazon Inspector
+
+Amazon Inspector continuously scans AWS workloads and applications (EC2, Container Images, Lambda Functions) for security vulnerabilities and provides
+
+findings with remediation recommendations
+
+AWS WAF
+
+| Protect web applications |
+
+HTTP/HTTPS requests
+
+Allow, Block, CAPTCHA, Rate Limit
+
+Amazon GuardDuty
+
+Detect security threats in AWS
+
+AWS logs, network activity suspicious behavior
+
+Generates Security Findings
+
+Amazon Inspector |
+
+Find vulnerabilities.
+
+EC2 , Lambda, ECR, software package
