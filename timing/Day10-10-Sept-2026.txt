@@ -1,0 +1,39 @@
+Definition: Docker is a containerization platform that helps developers package an application along with all its dependencies into a container, so it runs the same way everywhere.
+
+Docker is used to create container, which have dependencies so it can runs on every platform /low cost containers don't have its own OS/RAM, its runs using main OS
+
+Lightweight Docker hub Images are stored / managed & its public
+
+Docker Registry Image stored & shared
+
+Docker Engine Run on host OS, Docker Engine is the core software that allows you to build, run, and manage containers. pull/push images to hub OS kernel Docker have common OS, which will be used by other containers
+
+From Specifies the base image on top of which your image is built. Which ready-made image should I start with
+
+WORKDIR- current working folder inside the Docker image/container where Docker will perform operations. Sets the working directory inside the container. Which Folder Should Docker Work In
+
+"WORKDIR /app" Now every command executes inside /app. (No need to mentioned path every time use (.)
+
+Copy- Copies application related files from local machine to docker image. COPY [COPY <source> <destination>] Eg COPY lalit.py/app note- WORKDIR defines the working directory inside the Docker image during build. The same directory becomes the default working directory inside the container when the container starts from that image.
+
+Run Install all required software/file to form Image, Executes commands while building the image. Expose Declares which port the application uses. EXPOSE 5000 Application listens on port 5000
+
+ENTRYPOINT Defines the main executable of the container.
+
+CMD
+
+IMP how docker works.
+
+T We have to write code in docker file which includes command From, workdir, copy, RUN, Expose. (image is not create yet).
+
+Run "docker build" command then it execute all the commands
+
+Note- RUN command execute during docker build command: It install software permanently into image. (Ubuntu, Python)
+
+CMD execute after docker build It does nothing during the build or during you build the image. It is executed when you start a container using docker run
+
+Flow code in docker file> command Docker build run > Execution of "From, workdir, copy, RUN" > Image Docker Run (docker container start) > Container creation from image & run ENTRYPOINT CMD > application start
+
+note Container creation Docker does it.
+
+Container execution/startup ENTRYPOINT CMD run the application.
