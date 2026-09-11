@@ -1,0 +1,54 @@
+Manages hundreds or thousands of containers across servers.
+
+Why k8s: Docker alone cannot automatically manage everything. Kubernetes automatically:
+
+Kubernetes Orchestration Feature
+
+Auto-Healing Automatically replaces failed or unhealthy Pods to maintain the desired state.
+
+Restart Failed Containers Restarts a container if the application running inside it crashes.
+
+Scales up/down Increases/Reduce the number of Pods when traffic/load increases.
+
+Load Balancing Distribute user requests across Pods
+
+Rolling Updates Deploy new versions without downtime One pod is updated at a time without downtime.
+
+Cluster components Control plane & Worker node
+
+Control plane
+
+API Server Entry point of the cluster. Receives all kubectl and API requests.
+
+Controller Manager Ensures desired state is maintained (auto-healing, replicas, etc.).
+
+Scheduler Decides on which Worker Node a Pod should run.
+
+ETCD Database that stores cluster configuration and information. count of remaining pod, used pod etc Persistence volume Store info of pod related to application. located outside 1 cluster have 1 PV
+
+Worker node
+
+Pod Run the application containers
+
+Kubelet Each node connect to kubelet. Communicates with API server/Control Plane & manages Pods.
+
+Kube-Proxy Manages networking and routes Service traffic to Pods
+
+CRA Container Runtime is the actual software that: Pull, create, start, stop, delete conatiner
+
+I
+
+CRI (Container Runtime Interface) Its standard API/interface. It does not run containers. Its job is to define how Kubelet should communicate with a container runtime.
+
+Ingress decides which service should receive the request. Routes external traffic to the correct Service.
+
+User send request through internet > Ingress received traffic from the Internet. > Ingress Routes external traffic to the correct Service >
+
+Service uses kube-proxy to route the traffic to right pod (via load balancer) > Traffic reaches to Pod's IP & container (your app) > Container open port so the application can access by user Due to some reason if pod/container crashed > Kubelet tell this information to API server > API server tell this to controller manager > Controller Manager take action send response to API server > then accordingly API server tell this response to kubelet > from kubelet response transferred to Container runtime > CR fetch image, create new container, delete, stop
+
+Ln 289 Col 106
+
+19,222 characters
+
+Plain text
+
