@@ -1,0 +1,48 @@
+12 sep
+K8s creation using AWS
+
+H1
+
+Kubernetes Version, VPC auto scaling, Lam role, Security group, storage, networking,
+
+Node Group Configuration medium/large>No of node min/max/desired.
+
+In practical we have seen once we create a cluster we can access through internet but we directly not acess it 1st we have to login with aws credential using aws_access_key id so now we are in aws, then to generate/update the kubeconfig file with the EKS cluster details aws eks update-kubeconfig. Then kubectl uses that kubeconfig file to authenticate and connect to the cluster. After that, commands such as kubectl get nodes can be used to verify connectivity and view the worker nodes.
+
+Nmespace A Namespace is a way to logically divide a Kubernetes cluster into multiple virtual environments.
+
+Namespace is a logical partition in a Kubernetes cluster used to separate resources like Pods, Services, and Deployments for different environments such as Dev, Test, and Prod
+
+namespace.
+
+Default -The default namespace is the namespace automatically created by Kubernetes. If a user does not specify any namespace, all resources are created in the default
+
+default
+
+User applications
+
+kube-system
+
+Kubernetes system components.
+
+kube-public
+
+Public resources
+
+kube-node-lease
+
+I Node heartbeat information
+
+Deployment: Its manage, update a group of pods & their lifecycle. It ensure desired state of pods by automatically replace failed pods
+
+Auto-heals failed Pods
+
+Scales Pods up/down based on traffic
+
+Rollback revert to previous version
+
+Versioning
+
+deployed new version without downtime
+
+If you create a Deployment using kubectl create deployment nginx > Kubernetes automatically creates Deployment, ReplicaSet, Pods. ReplicaSet detects it. ReplicaSet creates a new Pod automatically. If ReplicaSet crashes Deployment detects it. Deployment creates a new ReplicaSet auto

@@ -1,0 +1,4 @@
+Overall architecture K8s
+go throgh all videos 
+learn& clear consepts 
+Practicals 
