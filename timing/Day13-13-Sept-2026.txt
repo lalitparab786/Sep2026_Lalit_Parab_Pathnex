@@ -1,0 +1,27 @@
+We write terraform code using EKS, Lam policy, Add-on, Node group (min-1, max-1, desired-2) > run tera code > K8s cluster is in running state but fully not completed > only 1 node is created, showing error > then we Troubleshoot > we observer that pods are pending or Pods not assigned to node > Then we analyze & found that we are using AWS auto scaler but not using component called as Cluster auto scaling (that's why it is not used desired count of 2, only create 1 node instead 2) > Then we use Cluster AS & run again > Now it is creating 2 Node & adjust the pending pods in that Node with help of Scheduler
+
+Cluster auto-scaler, Karpenter, AWS auto scaler, Keda, HPA
+
+Cluster auto-scaler- It monitors pods and when pods cannot be scheduled/Pending Pods due to insufficient resources > Calls the AWS API and tells the Auto Scaling Group to increase its desired capacity > CAS need Permission/ Iam policy (so CAS connect wit AASG) > Then AWS add new node > Scheduler place the pods to that node. check overall flow later It present inside any one node as pod, can connect to every node.
+
+AWS Auto-scaler
+
+AWS Auto Scaling is an AWS service which is responsible to increases or decreases Node based on demand.
+
+Karpenter is a Kubernetes node auto-scaling tool that automatically provisions (creates) and removes worker nodes based on pod requirements
+
+Karpenter directly calls AWS EC2 APIS, No Auto Scaling Group is required.
+
+Keda KEDA automatically scales pods based on events from external systems like Kafka KEDA does not directly increase Pods it tell HPA to perform the scaling.
+
+Initial 3 pod > Kafka Lag 1000 > Tells HPA desired replicas > HPA > Pods 36 Eg
+
+I
+
+HPA HPA (Horizontal Pod Autoscaler) is a Kubernetes component that automatically increases or decreases the number of Pods based on metrics such as CPU, memory, or custom metrics.
+
+Initial 3 pod > Traffic suddenly increases (CPU Usage 85%) > Pods 36 also scale down
+
+Metrics Serve that collects CPU and Memory usage from nodes and pods and provides this data to HPA so that HPA can decide whether to scale pods.
+
+Metrics Server provides resource metrics only: CPU Usage, Memory Usage.

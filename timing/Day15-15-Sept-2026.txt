@@ -1,0 +1,11 @@
+ 
+
+We start creating cluster > when we Run Cluster start running & getting 1 error > While troubleshooting we observe that Cluster auto-scaler pod is in running state & it is not placed in any node because node capacity is full > So we create Rule/Dependencies on add-on that we have created > Dependencies help to execute CAS to run first so that CAS will adjust the first & it will make sure that no pod is placed outside the Node.
+
+Now we about to initiate deployment by creating Yaml Apache server > add namespace Apache in Yaml > getting error namespace Apache not found > so creating namespace "kubectl create namespace Apache" > check namespace via "kubens" > now apply with "kubectl apply f appache.yml "(is used to create or update Kubernetes resources defined in the YAML manifest file and bring the cluster to the desired state described in that file.)
+
+Also add stateful set, We have not define any namespace for stateful so it is present in default section
+
+Once both are working so we have stateful & deployment > Try to delete deployment pod then it automatically replace pod with new one but pod name is different, but in case of stateful when we delete pod name remain same as last one.
+
+We check deployed services on the website use kubectl get svc -A > we have Deployment, stateful & services > all are deployed through cluster IP > Cluster IP is not reachable outside internet > so need to deploy it as node port > so we add service (service should have namespace else it gives error as selector-
