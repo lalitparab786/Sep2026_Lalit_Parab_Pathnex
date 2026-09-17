@@ -1,0 +1,51 @@
+-Sep-26
+
+H1
+
+BIS田~
+
+AB
+
+Affinity is a scheduling rule that tells Kubernetes on which Node a Pod should be placed.
+
+Why we use Suppose you have 5 worker nodes Node1,2,3 West zone & Node 4,5- East zone, So If you want application should run only in the west zone, you can use Node Affinity.
+
+> Node Affinity If we want to place Pod on particular node using labels
+
+So we predefine Nodel kubectl label nodes nodel env=Testing Node2- kubectl label nodes node2 env=Production
+
+To verify kubectl get nodes-show-labels
+
+Then we change key: env & values: production in Yaml & Result Pod is assigned to Node1 -> env=Testing
+
+> Pod Affinity Schedule this Pod on a Node where another specific Pod is already running.
+
+Place Pods together Schedule this Pod near another Pod, Used for Close/Faster communication between services, Pods run on same Node/Zone Eg- Backend + Radis (act as DB)
+
+> Pod Anti Affinity: Place Pods apart from each other, Do not schedule this Pod near another Pod, used for High availability, Pods run on different Nodes/Zones, Mostly used for replicas of same app so replicas are placed on different nodes. (Deployment set)
+
+Fe- Server down issue resolved
+
+> requiredDuringSchedulingIgnored During Execution (HARD Rule)
+
+Schedule Pod OR If label doesn't match Pod remains Required During Scheduling: At time of creation Pod scheduler Check Node Label If label matches
+
+Pending Ignored During Execution: Suppose Pod is already running on Node1, Now someone changes label: kubectl label nodes node1 env= UAT --overwrite(previously nodel label was env=Testing & now env=UAT) so output Node1 env=UAT. Pod will continue running state inside node but node name get change, Kubernetes will
+
+not evict/remove the Pod automatically.
+
+Here: Check label only at scheduling time Don't recheck after Pod is running
+
+> preferred DuringSchedulingIgnoredDuringExecution (SOFT Rule)
+
+preferredDuringScheduling: prefer this Pod to run on a particular Node (or near a particular Pod), but if not possible, schedule it somewhere else
+
+Scenariol: Testing Node Available Node1 env=Testing Scheduler chooses: Node1-> env=Testing because it is preferred Scenario2: Testing Node Not Available Node1 Down & Node2 env=Production Scheduler checks (Preferred Node Available No) Then Scheduler chooses: Node2 -> env=Production Pod still runs, It does not stay Pending..
+
+> Taint and Toleration work together to control which Pods can run on a Node.
+
+Taint Restriction on Node it not allowed Toleration Permission for Pod, allowed to run on this node.
+
+so it is work on key:value:effect
+
+Taint A Taint is applied to a Kubernetes Node to prevent or restrict Pods from being scheduled on that Node unless
