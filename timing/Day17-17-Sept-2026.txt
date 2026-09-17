@@ -1,0 +1,37 @@
+Helm
+
+H1
+
+Helm is a package manager for Kubernetes. Helm helps you install, upgrade, configure, and manage Kubernetes applications using reusable
+
+templates called Charts. Templates: YAML Blueprint containing placeholder, Templates are Kubernetes YAML files containing placeholders
+
+Values: Contain actual data used to fill those Placeholder. Accoording to requirement we modifie values
+
+Charts: A Helm Chart is the complete package that contains everything needed to deploy an application. Chart is a collection of Kubernetes YAML
+
+templates. Eg Chart.yaml, values.yaml, K8s templates Reusable & shareable
+
+Helm Repository: Location where helm charts are stored & shared
+
+Why helm: repo_name "Bitnami" inside we want apache.
+
+Suppose you want to deploy an application so you may need multiple YAML files: deployment.yaml, service.yaml, configmap.yaml, secret.yaml, ingress.yaml, hpa.yaml Managing all these files manually becomes difficult. (have to use this commands for all yaml files: kubectl apply -f Yaml file) Helm packages/merge everything into a single Chart.
+
+> 1st need to add repo in local "helm repo add bitnami URL" (It tells From which repo we have to pull) > now Helm chart has been added to our
+
+Local PC, it is reference
+
+> 2. Update Repository Metadata "helm repo update" (Downloads the list of available charts and versions.)
+
+> 3. need to install repo "helm install name bitnami/apache" (Using this repo we install particular version) Helm creates all required Kubernetes resources automatically.
+
+when we install command No need to use "kubectl apply -f" because helm Communicates directly with Kubernetes API Server which run this cmd at backend & cluster is formed
+
+Version control Every time you install or upgrade an application, Helm creates a new release revision
+
+helm by default store version history upto 10 version (it can be modified) so allowing you to rollback to a previous working version if an upgrade fails.
+
+3 Helm downloads the chart. Reads all templates inside the chart. Generates Kubernetes Cluster. Sends those manifests to the Kubernetes API Server. Kubernetes creates all services cluster is ready
+
+Helm is a Kubernetes Package Manager. Instead of managing multiple YAML files such as Deployment, Service, ConfigMap, Secret, Ingress, and HPA individually, Helm packages them into a Chart. We add a Helm repository, install the required chart, and Helm automatically creates all
