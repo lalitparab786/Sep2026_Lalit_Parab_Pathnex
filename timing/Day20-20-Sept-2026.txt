@@ -1,0 +1,14 @@
+ Terraform State is JSON a file that Terraform uses to keep track of the infrastructure it manages
+ 
+When you run: terraform apply: Terraform creates resources (EC2, VPC, EKS, etc.) and stores information about those resources in a state file.
+ 
+Why state file:
+ 
+Suppose your write Terraform code> Run terraform apply> EC2/Services created> Now Terraform does not save any state Since it has no memory > Later you execute: terraform apply again > shows validation: I don't know. Should I create another one> That's why Terraform needs a state file.
+ 
+- code change: Modify t2.micro to t3.medium > terraform apply> Now Terraform compares> Code: t3.medium, State: t2.micro, AWS: t2.micro> Difference detected:Desired State (Code) not match with Current State (AWS)> Terraform updated to t3.medium
+ 
+Tera Drift
+ 
+Someone Changes AWS Manually> Modify t2.micro to t3.medium (using aws console)> Code: t2.micro, State: t2.micro, AWS: t3.large> Terraform detects drift> When you run:terraform plan> AWS does not match Code> Terraform will change: updated to t2.micro > "because Terraform treats the code as the source of truth."
+ 

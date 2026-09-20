@@ -1,0 +1,10 @@
+Argo cd - Continuous delivery > Git ops: Git repository
+Practical- Argocd within EKS= 1 EKS,Argocd Outside= more than 1 EKS
+ 
+Connect jump server ssh> Kubectx-SCP >install git/kubectl >softlink> authentication> verify connection kubectl get node, security inbound rule>Helm>Argocd>changes made>Kubernates API servere>cluster
+ 
+Manual sync/Automatic - 
+Self-heal - restore changes
+Prune-if somone delete get managed 
+Authentication- who are u 
+RBAC - what action can user perform
