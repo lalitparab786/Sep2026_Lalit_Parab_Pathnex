@@ -1,0 +1,19 @@
+Terraform State: Terraform State is JSON a file that Terraform uses to keep track of the infrastructure it manages. It stores the current state of infrastructure managed by Terraform. Update post Terraform apply, If fail then not updated
+
+When you run: terraform apply: Terraform creates resources (EC2, VPC, EKS, etc.) and stores information about those resources in a state file. 1. "Terraform state list" Total state file will show 2. "Terraform state show Resource name" Shows content in that resource
+
+Tera Drift
+
+Someone Changes AWS Manually> Modify t2.micro to t3.medium (using aws console)> Code: t2.micro, State: t2.micro, AWS: t3.large> Terraform detects drift> When you run: terraform plan> AWS does not match Code> Terraform will change: updated to t2.micro > "because Terraform treats the code as the source of truth."
+
+Terra state lock: This feature is enabled due to 2 or more user hit at same time
+
+flow: Terra apply> Terra start running/creating> till the time it is created state lock is remain applied hence no one can do apply
+
+scenariol: If in between running process, If we press ctrl+C, Or processed is stop then process is cancelled/Stop but lock is still there so for that need to break the lock > Info Lock info ID, Path, Who- user, created time date to break "Terraform force-unlocked ID" to unlock state file & zhombie process
+
+Flow:
+
+Git code > Clone in local > create new branch in local > make change in local from A to B Terra plan (A to B) code get compare with state file (If "Created"- New, "Updated" Changes terra apply > Infra change A to B > State file updated B > create new branch in git > Push b new branch> PR raised> approved Merge into main> Delete new branch> in local we still have A> Git pull (B are present now)
+
+I

@@ -1,0 +1,85 @@
+Ansible is an open-source Automation and Configuration Management tool used for software installation, application deployment.
+
+-Think of Ansible as a tool that helps you perform the same task on multiple servers at once without logging into each server manually.
+
+-Without Ansible we have to do SSH for every server that we want to access, But with ansible if we write one command then Ansible installs resource(Nginx) on all servers automatically.
+
+There are few component
+
+Playbook A YAML file containing automation tasks. Steps to implement task
+
+1.host/grouping If we wanted to do configuration/installation or perform tasks on particular server then no need to changed playbook, instead group IP of
+
+that server & add in playbook as "hosts: webservers"
+
+2.task what kind of action wanted to perform on remote server
+
+Inventory List of server where we want to implement task Contain IP of managed server Predefine set which can be reusable yum, copy, service, file, apt etc
+
+Modules
+
+Roles For each role task is assign, Used to organize large playbooks.
+
+Control node The Control Node is the Server (Jump) where Ansible is installed. Stores Inventory, Playbooks, Runs Ansible cmd
+
+Managed node Managed Servers are the servers that Ansible manages. Receive instructions from Control Node, No Ansible installation required.
+
+Ansible is push-based architecture (from control to managed)
+
+Puppet & chef is pull based disable then remote node cant pull data
+
+from remote to managed S. Agent required. 2-way. Agent pull from main master > If port change or master configuration is
+
+-If we delete something in remote server then also it will come again because there is time set is defined for pulling the data
+
+-Based on define IP, master allow to pull data by servers.
+
+Flow
+
+Create Inventory File(server IP list) > Write Playbook (task u want to perform) > Login to Control Node (jump)> Ansible is installed on a Control Node > Run Playbook "ansible-playbook i inventory name playbook_name"> Ansible Reads Inventory (Ansible identifies all target servers.) > SSH Connection Established (Control Node connects to managed servers) SSH port should be open, If there is different no for SSH then same should be configure in Inventory
+
+file > Ansible sends the task to all server copy/Install on server > Managed Servers Perform Tasks >
+
+Changed) > Collect Results, Each server responds Ansible gathers all results > Display ReportAnsible is an open-source Automation and Configuration Management tool used for software installation, application deployment.
+
+-Think of Ansible as a tool that helps you perform the same task on multiple servers at once without logging into each server manually.
+
+-Without Ansible we have to do SSH for every server that we want to access, But with ansible if we write one command then Ansible installs resource(Nginx) on all servers automatically.
+
+There are few component
+
+Playbook A YAML file containing automation tasks. Steps to implement task
+
+1.host/grouping If we wanted to do configuration/installation or perform tasks on particular server then no need to changed playbook, instead group IP of
+
+that server & add in playbook as "hosts: webservers"
+
+2.task what kind of action wanted to perform on remote server
+
+Inventory List of server where we want to implement task Contain IP of managed server Predefine set which can be reusable yum, copy, service, file, apt etc
+
+Modules
+
+Roles For each role task is assign, Used to organize large playbooks.
+
+Control node The Control Node is the Server (Jump) where Ansible is installed. Stores Inventory, Playbooks, Runs Ansible cmd
+
+Managed node Managed Servers are the servers that Ansible manages. Receive instructions from Control Node, No Ansible installation required.
+
+Ansible is push-based architecture (from control to managed)
+
+Puppet & chef is pull based disable then remote node cant pull data
+
+from remote to managed S. Agent required. 2-way. Agent pull from main master > If port change or master configuration is
+
+-If we delete something in remote server then also it will come again because there is time set is defined for pulling the data
+
+-Based on define IP, master allow to pull data by servers.
+
+Flow
+
+Create Inventory File(server IP list) > Write Playbook (task u want to perform) > Login to Control Node (jump)> Ansible is installed on a Control Node > Run Playbook "ansible-playbook i inventory name playbook_name"> Ansible Reads Inventory (Ansible identifies all target servers.) > SSH Connection Established (Control Node connects to managed servers) SSH port should be open, If there is different no for SSH then same should be configure in Inventory
+
+file > Ansible sends the task to all server copy/Install on server > Managed Servers Perform Tasks >
+
+Changed) > Collect Results, Each server responds Ansible gathers all results > Display Report
