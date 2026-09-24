@@ -1,0 +1,19 @@
+Terraform is an Infrastructure as Code (IaC) tool used to automates infrastructure using code instead of manually using cloud provider consoles. Terraform uses HCL language
+
+Why we use Terra
+
+Declarative syntax - You tell Terraform what you want (desired state), not how to do it step by step
+
+Platform agnostic- Run on all platform provider AWS, AZURE, GOOGLE
+
+IAC - Infrastructure (servers, databases, networks, Kubernetes clusters, etc.) is created and managed using code instead of manual clicks in a UI.
+
+Key concept : We learn how to write code/parameters in code
+
+Provider - Where u want to create Infrastructure. The cloud platform/Services terra interact with- AWS, AZURE, GOOGLE
+
+Sources- location of provider
+
+Version- which provider version Terraform should use. > & ~ (Tilde ~ tells Eg. 5.2 so 5.3,5.7,5.9,5.14 but not 6.0)
+
+ 
