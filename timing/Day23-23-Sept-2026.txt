@@ -1,0 +1,101 @@
+File
+
+Edit
+
+View
+
+lan 169858809 cm 50028062
+
+X
+
+H1 BIS
+
+CI/CD is a used to automates the process of building, testing, and deploying applications.
+
+CI Continuous Integration: Developer writes code> Pushes code to GitHb > Jenkin CI tool (Jenkins, GitHub Actions, GitLab CI) triggers automatically > build application/ Code is build > based on scripts Automation testing happened > If successful, an artifact Docker image is created Image push aws ECR > update image tag in Kubernetes manifest> git push code added in repo ArgoCD detect the changes in code delivered in Preprod > sanity> Manual approval > update prod manifest > Argo detect PROD change > Deploy to PROD
+
+After CI completes successfully, the application is automatically prepared for deployment.
+
+Deployment to production usually requires manual approval.
+
+Delivered in Pre-prod environment > sanity is happened post approval deployment on Production
+
+Plugins: A plugin is an add-on or extension that allow multiple application to interact with each other. Jenkin, maven, k8s, aws, git Eg- A plugin is an add-on that enables Jenkins (or any tool) to integrate and communicate with other applications/tools.
+
+Jenkins: IMP part in CI/CD which used to automate the SDLC & STLC process such as Build, Test, Package, and Deploy.
+
+Stage- There are multiple stages in CI/CD as per requirement we use it Source Build(Compile the application) Test Package (Create Docker image) Release (Store artifact in ECR) Deploy Delivery
+
+7F/WS
+
+jenkin controller
+
+Jenkins Controller is the central node responsible for managing pipelines, scheduling jobs, maintaining configurations, and assigning work to Jenkins agents. The controller coordinates the build process, while the agents perform the actual execution of build, test, and deployment tasks.
+
+? Agent any Jenkins, use any available agent (worker node) to execute the CI pipeline tasks. If we want to run the pipeline on a specific machine, we use labels/tags with agent { label 'name') to target that particular agent. agents perform the actual execution of build, test, and deployment tasks.
+
+Both Runner and Agent that executes Jobs in CI/CD pipeline
+
+2 type of runner
+
+I
+
+Self hosted runner A runner installed and managed by your organization own infrastructure such as EC2, VM, or on-premise servers.
+
+Platform/shared runner- A runner provided and managed by the CI/CD platform itself. GitHub 1. GitHub-hosted Runner 2. GitLab Shared Runner Info- Both Runner and Agent do the same basic job: that executes CI/CD pipeline jobs, difference is mainly the terminology as Jenkins/Azure- Agent where GitLab CI-CD/GitHub Actions Runners, self-hosted runners provide more control and customization, while shared runners are easier to use and maintain.
+
+pipeline type
+
+Declarative: Simple syntax, easier to write, Structured (pipeline{})
+
+Scripted: Groovy scripting, used for complex workflow, Uses node(), More flexible GitHub Source code management (repository, commit, push, pull, branches, PRs) Jenkins CI/CD tool that manages/orchestrates the overall pipeline GitHub Actions / GitLab CI/CD CI/CD platforms that define and manage pipelinesFile
+
+Edit
+
+View
+
+lan 169858809 cm 50028062
+
+X
+
+H1 BIS
+
+CI/CD is a used to automates the process of building, testing, and deploying applications.
+
+CI Continuous Integration: Developer writes code> Pushes code to GitHb > Jenkin CI tool (Jenkins, GitHub Actions, GitLab CI) triggers automatically > build application/ Code is build > based on scripts Automation testing happened > If successful, an artifact Docker image is created Image push aws ECR > update image tag in Kubernetes manifest> git push code added in repo ArgoCD detect the changes in code delivered in Preprod > sanity> Manual approval > update prod manifest > Argo detect PROD change > Deploy to PROD
+
+After CI completes successfully, the application is automatically prepared for deployment.
+
+Deployment to production usually requires manual approval.
+
+Delivered in Pre-prod environment > sanity is happened post approval deployment on Production
+
+Plugins: A plugin is an add-on or extension that allow multiple application to interact with each other. Jenkin, maven, k8s, aws, git Eg- A plugin is an add-on that enables Jenkins (or any tool) to integrate and communicate with other applications/tools.
+
+Jenkins: IMP part in CI/CD which used to automate the SDLC & STLC process such as Build, Test, Package, and Deploy.
+
+Stage- There are multiple stages in CI/CD as per requirement we use it Source Build(Compile the application) Test Package (Create Docker image) Release (Store artifact in ECR) Deploy Delivery
+
+7F/WS
+
+jenkin controller
+
+Jenkins Controller is the central node responsible for managing pipelines, scheduling jobs, maintaining configurations, and assigning work to Jenkins agents. The controller coordinates the build process, while the agents perform the actual execution of build, test, and deployment tasks.
+
+? Agent any Jenkins, use any available agent (worker node) to execute the CI pipeline tasks. If we want to run the pipeline on a specific machine, we use labels/tags with agent { label 'name') to target that particular agent. agents perform the actual execution of build, test, and deployment tasks.
+
+Both Runner and Agent that executes Jobs in CI/CD pipeline
+
+2 type of runner
+
+I
+
+Self hosted runner A runner installed and managed by your organization own infrastructure such as EC2, VM, or on-premise servers.
+
+Platform/shared runner- A runner provided and managed by the CI/CD platform itself. GitHub 1. GitHub-hosted Runner 2. GitLab Shared Runner Info- Both Runner and Agent do the same basic job: that executes CI/CD pipeline jobs, difference is mainly the terminology as Jenkins/Azure- Agent where GitLab CI-CD/GitHub Actions Runners, self-hosted runners provide more control and customization, while shared runners are easier to use and maintain.
+
+pipeline type
+
+Declarative: Simple syntax, easier to write, Structured (pipeline{})
+
+Scripted: Groovy scripting, used for complex workflow, Uses node(), More flexible GitHub Source code management (repository, commit, push, pull, branches, PRs) Jenkins CI/CD tool that manages/orchestrates the overall pipeline GitHub Actions / GitLab CI/CD CI/CD platforms that define and manage pipelines

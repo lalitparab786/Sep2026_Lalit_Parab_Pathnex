@@ -1,0 +1,45 @@
+agnostic work with multiple cloud providers and platforms AWS, Azure, GCP IAC used to automates infrastructure using code instead of manually
+
+Component in Terraform
+
+-provider: Where you want to make Infrastructure (On which platform AWS, Azure, google)
+
+-source: Location of provider
+
+-Version: version of a Provider (Tilde represent, Eg 5.1 so it could be 5.3,5.6,5.9 but not 6.0)
+
+-Config path-
+
+-Resource: Which resource you want & name you want in state file. "aws_instance""Pathnex" ("aws instance" Fixed, "Pathnex" name of EC2 in state file)
+
+-Name: In Infra what is the name of that resource
+
+-Module: Reusable define set
+
+-Bash: Represent code written in CLI
+
+Terra commands
+
+Terraform Plan: Show changes that we made in Infra & code. Compare with real Infra. Status "Created"- New, "Updated" Changes, "Deleted"-destroy
+
+Terraform apply: Is used to make changes in infrastructure based on the Terraform code. Terraform destroy: Is used to delete all resources created by Terraform.
+
+Terraform validate: validate configuration file for syntax errors
+
+Concepts
+
+I
+
+Terraform State: Terraform State is JSON a file that Terraform uses to keep track of the infrastructure it manages. It stores the current state of infrastructure managed by Terraform. Update post Terraform apply, If fail then not updated
+
+When you run: terraform apply: Terraform creates resources (EC2, VPC, EKS, etc.) and stores information about those resources in a state file. 1. "Terraform state list" Total state file will show 2. "Terraform state show Resource name" Shows content in that resource
+
+Tera Drift
+
+Someone Changes AWS Manually> Modify t2.micro to t3.medium (using aws console)> Code: t2.micro, State: t2.micro, AWS: t3.large> Terraform detects drift> When you run: terraform plan> AWS does not match Code> Terraform will change: updated to t2.micro > "because Terraform treats the code as the source of truth."
+
+Terra state lock: This feature is enabled due to 2 or more user hit at same time
+
+flow: Terra apply> Terra start running/creating> till the time it is created state lock is remain applied hence no one can do apply
+
+scenarioi: If in between running process, If we press ctrl + C, Or processed is stop then process is cancelled/Stop but lock is still there so for
