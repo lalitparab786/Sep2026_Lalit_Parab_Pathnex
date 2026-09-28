@@ -1,0 +1,6 @@
+26 sep
+Filebeat-is lightweight agent to collect & ship/transfer log files to logstash → Then logstash take those log & data to logstash extract (Remove Unwanted part at inital) & filter (Purify data) & shared (Route) to Elastic search. Elastic search is Brain or Central storage engine of ELA. so, it stores all the data then To visualize it date it comes to kibana. (It is visual izan data tool)
+log file contain lots of info, so it is process of analyze & extracting meaningful information from log file. & basis that only - share data to elastic Search
+eg data we have  2025-05-01 12:31:02 (ERROR) User Loged in.
+Parsing - 1.Extract timestamp.
+2 separate log level (error)/Info)  3 user Action
