@@ -1,0 +1,38 @@
+25 sep
+Metric is numerical value in terms of health, performance, and behavior of systems, applications, servers
+
+Log: Detailed activity record generated of system/application Eg- 2026-09-24 10:30:15 INFO User login successful. 2026-09-24 10:31:10 ERROR Database
+
+- log agent is present inside the node, Used to read server logs, compare user action.
+
+Trace: End-to-end journey of a single request across multiple services. API Request → Service A Service B C
+
+-Eg. User try to hit the request> Request going through multiple services> but how could it will be traced. so at the initial point tracing ID is associate > 
+
+Span One operation inside a trace. It shows which service/task cause delay.
+
+APM (Application Performance Monitoring): Monitors application performance using traces, errors. APM is a Datadog feature that uses traces to monitor application performance. Eg- Identifying why an API response takes 5 seconds.
+ 
+ 
+ELK: ELK is a popular tool used for log monitoring and analysis.
+
+File beat-is lightweight agent to collect & ship/transfer log files to Logstash → Then Logstash take those log / data & extract (Remove Unwanted part at initial) & filter (Purify data), log file contain lots of info, so it is extracting meaningful information from log concept
+
+Parsing parsing group the log into parts > then shared log to Elastic search. Elastic search is Brain or Central storage engine. Elasticsearch stores logs in different phases. New logs are stored in the Hot phase for fast access, moved to Warm storage when access decreases(means Elasticsearch automatically shifts older logs from hot phase to warm phase because they are searched less frequently.), then moved to Cold storage for long-term retention, and finally deleted when the period expires.
+>> then data comes to Kibana.It is visualization data tool 
+
+difference bw monitering & logging 
+
+Log: Detailed activity record generated of system/application Eg-  User login successful.  ERROR Database
+
+log agent is present inside the node, Used to read server logs, compare user action.
+
+Trace: End-to-end journey of a single request across multiple services. API Request → Service A Service B C
+
+-Eg. User try to hit the request> Request going through multiple services> but how could it will be traced. so at the initial point tracing ID is associate >
+
+Span One operation inside a trace. It shows which service/task cause delay.
+
+APM Application Performance Monitoring, matricx
+
+ 

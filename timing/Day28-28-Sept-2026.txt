@@ -1,0 +1,17 @@
+28 sep
+SSL & TLL ensures that data exchanged between Browser & server remains private and Data is in encrypted format so cannot be read by hackers.
+Types of SSL & TLL:
+Self-signed: is created and signed by the server itself, not by a trusted Certificate Authority (CA) such as DigiCert. Browsers cannot automatically trust it because there is no trusted CA, Therefore, the browser displays a security warning before allowing the connection. certificate can still establish an SSL/TLS encrypted connection and exchange session keys.
+Flow self signed: User HTTPS Request> Nginx sends Certificate + Public Key> Browser verifies certificate > Certificate NOT trusted X (Not signed by a
+trusted CA)> Browser> Warning: "Your connection is not private"
+Generate key > Create CSR > create certificate > configure nginx > trust browser
+Certificate Authority: A CA acts as a trusted third party that signs certificates, allowing browsers to verify that a website is genuine and secure DigiCert: is a Certificate Authority (CA) that provides trusted SSL/TLS certificates for websites, allowing browsers to establish secure HTTPS connections
+DigiCert Certificate: Encryption+ Trust
+Self-Signed Certificate: Encryption + Trust X
+I
+Before Website Goes Live: Server creates CSR> Sends CSR to DigiCert> DigiCert verifies ownership> DigiCert signs certificate using (DigiCert Private Key)> Certificate returned to server.
+Flow (User visit)
+User opens website, Browser sends request to the server> Server sends SSL Certificate with detail as Domain name, Public Key, CA details, Expiry date its like website's digital ID card> Browser verifies the certificate as Is it signed by DigiCert or self signed > If verification fails pop-up shown as "Your connection is not private">if pass Key Exchange, Browser and server establish/exchange the session key using asymmetric cryptography >The server has: Public Key + Private Key> When the SSL certificate is sent, it contains the Public Key > Browser receives Public Key> Browser generates a Session Key (Session Key 123ABC)> Browser encrypts Session Key using Public Key> Browser sends encrypted Session Key to server> Only the server's Private Key can decrypt it> Now both browser and server know: Session Key 123ABC> But nobody else knows it>Secure Connection Established: Now both browser and server have the same session key: So every message is encrypted using that key> symmetric cryptography > You enter: LOGIN ID & pass> Browser encrypts it:> & send to server > hacker see encrypted data and cannot understand it. > Server receives: Uses the same session key: Decrypts it:>All communication is encrypted,Nobody in between can read the data.
+Symmetric Key: Same key for encryption and decryption, Fast, Actual data transfer(video, image), Further communication Asymmetric Key: Public key + Private key, Slow, Secure key(session/public key) exchange and authentication, Mainly at initial stage
+Pending how to create SSC & DigiCert using commands
+ 
